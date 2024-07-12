@@ -40,7 +40,8 @@ def get_face_embedding(face_image):
     return embedding[0]
 
 # Load an image
-image_path = "../data/ronaldo1.png"
+image_path = "../images/ronaldo1.png"
+
 
 if os.path.exists(image_path):
     print(f"Image found at {image_path}")
@@ -86,4 +87,7 @@ for embedding, (x1, y1, x2, y2) in face_embeddings:
 # Save the image with detected faces
 output_path = "../data/output_image.png"
 cv2.imwrite(output_path, image)
-print(f"Output image saved to {output_path}")
+if image_path!="../images/ronaldo1.png": 
+    print("Face not detected")
+else:
+    print(f"Output image saved to {output_path}")
